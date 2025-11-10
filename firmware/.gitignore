@@ -2,3 +2,6 @@
 /.embuild
 /target
 /Cargo.lock
+
+config_ssid.txt
+config_password.txt

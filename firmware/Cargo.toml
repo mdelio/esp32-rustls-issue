@@ -24,7 +24,19 @@ experimental = ["esp-idf-svc/experimental"]
 
 [dependencies]
 log = "0.4"
-esp-idf-svc = "0.51"
+anyhow = "1.0"
+heapless = "0.9.1"
+time = { version = "0.3.44", features = ["local-offset", "formatting", "macros"] }
+
+esp-idf-svc = { version = "0.51.0" }
+esp-idf-hal = { version = "0.45.2" }
+esp-idf-sys = { version = "0.36.1" }
+
+tokio = { version = "1.48.0", default-features = false, features = ["net", "rt", "io-std", "io-util", "macros", "sync", "rt-multi-thread", "mio", "time"] }
+reqwest = { version = "0.12.24", default-features = false, features = ["stream", "json", "cookies"] }
+
+#ring = { version = "0.17.14", default-features = false, features = ["std", "less-safe-getrandom-espidf"] }
+#rustls = { version = "0.23.35", default-features = false, features = ["std", "tls12", "ring"] }
 
 # --- Optional Embassy Integration ---
 # esp-idf-svc = { version = "0.51", features = ["critical-section", "embassy-time-driver", "embassy-sync"] }
